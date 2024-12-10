@@ -7,6 +7,24 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// My solution is using two pointer
+function palindrome(str) {
+  let firstPtr = 0
+  let secondPtr = str.length - 1
+  while (firstPtr < secondPtr) {
+    if (str[firstPtr] != str[secondPtr]) {
+      return false
+    }
+    firstPtr++
+    secondPtr--
+  }
+  return true
+}
+
+// Second is using array method 
+// function palindrome(str) {
+// const reversed = str.split("").reverse().join("")
+// return str === reversed
+// }
 
 module.exports = palindrome;
